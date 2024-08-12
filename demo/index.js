@@ -1,22 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import SnakeGame from '../src/SnakeGame.jsx'
 import './index.css'
-
+import Logo from './components/Logo.jsx'
+import { decorationBG } from './components/BoardDecoration.js'
+const Score = ({ score }) => <div className='Score'>{score}</div>
+const Game = () => {
+  const [score, setScore] = React.useState(0)
+  return (
+    <>
+      <div className='TurqoiseBorder'>
+        <div className='GreenBorder'>
+          <SnakeGame
+            onChangeScore={(score) => {
+              setScore(score)
+            }}
+          />
+        </div>
+      </div>
+      <div
+        className='BoardDecoration'
+        style={{
+          backgroundRepeat: 'no-repeat',
+          backgroundImage: decorationBG,
+        }}>
+        <Score score={score} />
+      </div>
+    </>
+  )
+}
 ReactDOM.render(
   <React.StrictMode>
-    <h1>react-simple-snake</h1>
-    <div className="textWrapper">
-      <p className="subTitle">
-      <a href="https://www.npmjs.com/package/react-simple-snake" target="_blank" rel="noopener noreferrer">NPM</a> -
-      <a href="https://github.com/MaelDrapier/react-simple-snake" target="_blank" rel="noopener noreferrer"> Github</a>
-      </p>
-      <p id="instructions">Use the arrow keys or W/A/S/D to play</p>
-      <p className="subTitle">A simple snake game created with the
-      <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer"> React </a>
-      JavaScript library</p>
-    </div>
-    <SnakeGame />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap'
+      rel='stylesheet'
+    />
+    <Logo className='Logo' />
+    <Game />
   </React.StrictMode>,
   document.getElementById('root')
-);
+)

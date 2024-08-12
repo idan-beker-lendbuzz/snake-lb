@@ -2,10 +2,24 @@
 	position: relative;
 	margin: auto;
 	border-style: solid;
+	background-color: 'pink';
+	overflow: hidden;
+	box-sizing:content-box;
 }
 
 #GameBoard .Block {
 	position: absolute;
+}
+
+#GameBoard .Snake:first-child::after {
+	content: '';
+	position:absolute;
+	top:10px;
+	height:10px;
+	width:10px;
+	left:10px;
+	border:1px solid black;
+	background-color: white !important;
 }
 
 #GameBoard #GameOver {
@@ -18,7 +32,6 @@
 
 #GameBoard #Score {
 	position: relative;
-	top: 105%;
 	text-align: center;
 	font-weight: bold;
 }

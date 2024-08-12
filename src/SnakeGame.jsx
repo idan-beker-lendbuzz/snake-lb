@@ -21,7 +21,7 @@ class SnakeGame extends React.Component {
       direction: 'right',
       directionChanged: false,
       isGameOver: false,
-      snakeColor: this.props.snakeColor || this.getRandomColor(),
+      snakeColor: '#b0d28e',
       appleColor: this.props.appleColor || this.getRandomColor(),
       score: 0,
       highScore: Number(localStorage.getItem('snakeHighScore')) || 0,
@@ -37,7 +37,7 @@ class SnakeGame extends React.Component {
 
   initGame() {
     // Game size initialization
-    let percentageWidth = this.props.percentageWidth || 40
+    let percentageWidth = 100
     let width =
       document.getElementById('GameBoard').parentElement.offsetWidth *
       (percentageWidth / 100)
@@ -146,7 +146,7 @@ class SnakeGame extends React.Component {
       directionChanged: false,
       isGameOver: false,
       gameLoopTimeout: 50,
-      snakeColor: this.getRandomColor(),
+      snakeColor: '#b0d28e',
       appleColor: this.getRandomColor(),
       score: 0,
       newHighScore: false,
@@ -222,7 +222,7 @@ class SnakeGame extends React.Component {
 
       // decrease the game loop timeout
       if (gameLoopTimeout > 25) gameLoopTimeout -= 0.5
-
+      this.props.onChangeScore(this.state.score + 1)
       this.setState({
         snake,
         apple,
@@ -368,44 +368,49 @@ class SnakeGame extends React.Component {
         />
       )
     }
-
+    // background-color: #130029;
+    // opacity: 0.8;
+    // background-image:  linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, #130029 1px);
+    // background-size: 20px 20px;
     return (
       <div
         id='GameBoard'
         style={{
-          width: this.state.width,
+          width: '100%',
           height: this.state.height,
           borderWidth: this.state.width / 50,
+          borderColor: '#1e222c',
+          backgroundImage:
+            'linear-gradient(#5a4f6a 1px, transparent 1px), linear-gradient(to right, #5a4f6a 1px, #130029 1px)',
+          backgroundSize: '40px 40px',
         }}>
         {this.state.snake.map((snakePart, index) => {
           return (
             <div
               key={index}
-              className='Block'
+              className='Block Snake'
               style={{
                 width: this.state.blockWidth,
                 height: this.state.blockHeight,
                 left: snakePart.Xpos,
                 top: snakePart.Ypos,
-                background: this.state.snakeColor,
+                background: '#b3d78e',
               }}
             />
           )
         })}
         <div
-          className='Block'
+          className='Block Apple'
           style={{
-            width: this.state.blockWidth,
+            width: this.state.blockWidth + 10,
             height: this.state.blockHeight,
             left: this.state.apple.Xpos,
             top: this.state.apple.Ypos,
-            background: this.state.appleColor,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundImage: `url('data:image/svg+xml,<svg width="29" height="29" viewBox="0 0 50 77" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M48.2953 54.994H33.0612V49.194C33.0612 45.0221 29.6597 41.6206 25.4878 41.6206H20.8507V26.3866H25.4878C38.0908 26.3866 48.2953 36.671 48.2953 49.194V54.994Z" fill="%23485469"/><path d="M48.295 75.1706H23.5541C11.0312 75.1706 0.746704 64.9661 0.746704 52.363V0.490246H15.9735V52.363C15.9735 56.535 19.375 59.9365 23.5469 59.9365H48.2877V75.1706H48.295Z" fill="%234CB95F"/></svg>')`,
           }}
         />
-        <div id='Score' style={{ fontSize: this.state.width / 20 }}>
-          HIGH-SCORE: {this.state.highScore}&ensp;&ensp;&ensp;&ensp;SCORE:{' '}
-          {this.state.score}
-        </div>
       </div>
     )
   }

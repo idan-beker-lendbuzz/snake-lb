@@ -1,13 +1,65 @@
+* {
+  box-sizing: border-box;
+}
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding-top: 150px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #9998ca;
 }
 
+.Logo {
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+.GreenBorder {
+  border: 12px solid #b5d78d;
+  outline: 2px solid black;
+  padding-right: 30px;
+}
+
+.BoardDecoration {
+  position: relative;
+  top: -120px;
+  height: calc(40vh - 80px);
+  width: 100vw;
+  background-size: 100% 100%;
+
+}
+
+.Score {
+  font-family: 'Roboto Mono';
+  position: absolute;
+  width: 30px;
+  left: calc(50% - 35px);
+  font-size: 70px;
+  top: 230px;
+  color:#9998ca;
+}
+
+.TurqoiseBorder {
+  border-style: solid;
+  border-color: #78c0b3;
+  border-top-width: 15px;
+  border-right-width: 20px;
+  border-left-width: 20px;
+  border-bottom-width: 38px;
+  outline: 1px solid black;
+  width: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+}
 h1 {
   font-size: 24px;
   font-size: max(24px, 3vw);
@@ -15,7 +67,7 @@ h1 {
   margin-bottom: 0px;
 }
 
-a, a:visited {
+a:visited {
   color: rgb(86, 148, 240);
   text-decoration: none;
 }
