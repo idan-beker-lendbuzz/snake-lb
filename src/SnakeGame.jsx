@@ -37,10 +37,8 @@ class SnakeGame extends React.Component {
 
   initGame() {
     // Game size initialization
-    let percentageWidth = 100
-    let width =
-      document.getElementById('GameBoard').parentElement.offsetWidth *
-      (percentageWidth / 100)
+    let width = 800
+
     width -= width % 30
     if (width < 30) width = 30
     let height = (width / 3) * 2
@@ -368,15 +366,12 @@ class SnakeGame extends React.Component {
         />
       )
     }
-    // background-color: #130029;
-    // opacity: 0.8;
-    // background-image:  linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, #130029 1px);
-    // background-size: 20px 20px;
+
     return (
       <div
         id='GameBoard'
         style={{
-          width: '100%',
+          width: this.state.width,
           height: this.state.height,
           borderWidth: this.state.width / 50,
           borderColor: '#1e222c',
@@ -384,6 +379,12 @@ class SnakeGame extends React.Component {
             'linear-gradient(#5a4f6a 1px, transparent 1px), linear-gradient(to right, #5a4f6a 1px, #130029 1px)',
           backgroundSize: '40px 40px',
         }}>
+        <iframe
+          src='https://drive.google.com/file/d/1j0RAQOeHGfQbviUa65R2FSgahxW_FB71/preview'
+          width='640'
+          height='480'
+          muted='true'
+          allow='autoplay'></iframe>
         {this.state.snake.map((snakePart, index) => {
           return (
             <div

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import SnakeGame from '../src/SnakeGame.jsx'
 import './index.css'
 import Logo from './components/Logo.jsx'
-import { decorationBG } from './components/BoardDecoration.js'
-const Score = ({ score }) => <div className='Score'>{score}</div>
+import GamePanel from './components/GamePanel.jsx'
+
 const Game = () => {
   const [score, setScore] = React.useState(0)
   return (
@@ -18,14 +18,7 @@ const Game = () => {
           />
         </div>
       </div>
-      <div
-        className='BoardDecoration'
-        style={{
-          backgroundRepeat: 'no-repeat',
-          backgroundImage: decorationBG,
-        }}>
-        <Score score={score} />
-      </div>
+      <GamePanel score={score} />
     </>
   )
 }

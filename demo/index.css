@@ -26,15 +26,13 @@ body {
 .GreenBorder {
   border: 12px solid #b5d78d;
   outline: 2px solid black;
-  padding-right: 30px;
 }
 
 .BoardDecoration {
   position: relative;
-  top: -120px;
   height: calc(40vh - 80px);
   width: 100vw;
-  background-size: 100% 100%;
+  background-size: cover;
 
 }
 
@@ -56,7 +54,7 @@ body {
   border-left-width: 20px;
   border-bottom-width: 38px;
   outline: 1px solid black;
-  width: 90vh;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
