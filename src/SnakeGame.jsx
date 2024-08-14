@@ -1,6 +1,7 @@
 import React from 'react'
 import './SnakeGame.css'
 import GameOver from './GameOver.jsx'
+import video from './assets/Promo.mp4'
 
 class SnakeGame extends React.Component {
   constructor(props) {
@@ -379,12 +380,19 @@ class SnakeGame extends React.Component {
             'linear-gradient(#5a4f6a 1px, transparent 1px), linear-gradient(to right, #5a4f6a 1px, #130029 1px)',
           backgroundSize: '40px 40px',
         }}>
-        <iframe
-          src='https://drive.google.com/file/d/1j0RAQOeHGfQbviUa65R2FSgahxW_FB71/preview'
-          width='640'
-          height='480'
-          muted='true'
-          allow='autoplay'></iframe>
+        <video
+          autoPlay
+          muted
+          height={this.state.height}
+          width={this.state.width}
+          style={{
+            position: 'absolute',
+            zIndex: 4,
+            left: 0,
+            background: 'black',
+          }}>
+          <source src={video} type='video/mp4' />
+        </video>
         {this.state.snake.map((snakePart, index) => {
           return (
             <div
