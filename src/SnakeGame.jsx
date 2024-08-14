@@ -23,6 +23,7 @@ class SnakeGame extends React.Component {
       directionChanged: false,
       isGameOver: false,
       snakeColor: '#b0d28e',
+      showVideo: true,
       appleColor: this.props.appleColor || this.getRandomColor(),
       score: 0,
       highScore: Number(localStorage.getItem('snakeHighScore')) || 0,
@@ -385,6 +386,7 @@ class SnakeGame extends React.Component {
           muted
           height={this.state.height}
           width={this.state.width}
+          className='Video'
           style={{
             position: 'absolute',
             zIndex: 4,
