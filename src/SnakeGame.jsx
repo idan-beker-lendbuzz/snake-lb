@@ -381,20 +381,6 @@ class SnakeGame extends React.Component {
             'linear-gradient(#5a4f6a 1px, transparent 1px), linear-gradient(to right, #5a4f6a 1px, #130029 1px)',
           backgroundSize: '40px 40px',
         }}>
-        <video
-          autoPlay
-          muted
-          height={this.state.height}
-          width={this.state.width}
-          className='Video'
-          style={{
-            position: 'absolute',
-            zIndex: 4,
-            left: 0,
-            background: 'black',
-          }}>
-          <source src={video} type='video/mp4' />
-        </video>
         {this.state.snake.map((snakePart, index) => {
           return (
             <div
@@ -422,6 +408,20 @@ class SnakeGame extends React.Component {
             backgroundImage: `url('data:image/svg+xml,<svg width="29" height="29" viewBox="0 0 50 77" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M48.2953 54.994H33.0612V49.194C33.0612 45.0221 29.6597 41.6206 25.4878 41.6206H20.8507V26.3866H25.4878C38.0908 26.3866 48.2953 36.671 48.2953 49.194V54.994Z" fill="%23485469"/><path d="M48.295 75.1706H23.5541C11.0312 75.1706 0.746704 64.9661 0.746704 52.363V0.490246H15.9735V52.363C15.9735 56.535 19.375 59.9365 23.5469 59.9365H48.2877V75.1706H48.295Z" fill="%234CB95F"/></svg>')`,
           }}
         />
+        <video
+          autoPlay
+          muted
+          height={this.state.height}
+          width={this.state.width}
+          className='Video'
+          style={{
+            position: 'absolute',
+            zIndex: 4,
+            left: 0,
+            background: 'black',
+          }}>
+          <source src={video} type='video/mp4' />
+        </video>
       </div>
     )
   }
