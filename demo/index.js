@@ -10,6 +10,8 @@ const Game = () => {
   return (
     <>
       <div className='TurqoiseBorder'>
+        <Logo className='Logo' />
+
         <div className='GreenBorder'>
           <SnakeGame
             onChangeScore={(score) => {
@@ -26,11 +28,12 @@ ReactDOM.render(
   <React.StrictMode>
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+    <link href='https://fonts.cdnfonts.com/css/cubicfive' rel='stylesheet' />
+
     <link
       href='https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap'
       rel='stylesheet'
     />
-    <Logo className='Logo' />
     <Game />
   </React.StrictMode>,
   document.getElementById('root')

@@ -391,6 +391,7 @@ class SnakeGame extends React.Component {
                 height: this.state.blockHeight,
                 left: snakePart.Xpos,
                 top: snakePart.Ypos,
+                zIndex: 3,
                 background: '#b3d78e',
               }}
             />

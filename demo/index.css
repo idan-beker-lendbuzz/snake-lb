@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 body {
+  padding-top: 5px;
   margin: 0;
-  padding-top: 150px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,36 +17,16 @@ body {
 }
 
 .Logo {
-  height: 100px;
+  height: 30px;
   width: 200px;
   position: absolute;
-  top: 10px;
-  left: 30px;
-}
-.GreenBorder {
-  border: 12px solid #b5d78d;
-  outline: 2px solid black;
-}
-
-.BoardDecoration {
-  position: relative;
-  height: calc(40vh - 80px);
-  width: 100vw;
-  background-size: cover;
-
-}
-
-.Score {
-  font-family: 'Roboto Mono';
-  position: absolute;
-  width: 30px;
-  left: calc(50% - 35px);
-  font-size: 70px;
-  top: 230px;
-  color:#9998ca;
+  bottom: -34px;
+  left: calc(50% - 100px);
+  z-index: 2;
 }
 
 .TurqoiseBorder {
+  position: relative;
   border-style: solid;
   border-color: #78c0b3;
   border-top-width: 15px;
@@ -58,6 +38,30 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.GreenBorder {
+  border: 12px solid #b5d78d;
+  outline: 2px solid black;
+}
+
+.BoardDecoration {
+  position: relative;
+  min-width: 864px;
+  height: calc(40vh - 80px);
+  width: 100vw;
+  background-size: cover;
+}
+
+.Score {
+  font-family: 'Roboto Mono';
+  position: absolute;
+  width: 30px;
+  left: calc(50% - 35px);
+  font-size: 70px;
+  top: 230px;
+  color: #9998ca;
+}
+
 h1 {
   font-size: 24px;
   font-size: max(24px, 3vw);
