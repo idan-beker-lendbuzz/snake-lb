@@ -5,6 +5,7 @@
   background-color: 'pink';
   overflow: hidden;
   box-sizing: content-box;
+  font-family: 'CubicFive10';
 }
 
 #GameBoard .Block {
